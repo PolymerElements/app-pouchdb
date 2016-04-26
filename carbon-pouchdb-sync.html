@@ -1,0 +1,71 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="pouchdb.html">
+<script>
+  (function() {
+    'use strict';
+
+    Polymer({
+      is: 'carbon-pouchdb-sync',
+
+      properties: {
+        src: {
+          type: String
+        },
+
+        target: {
+          type: String
+        },
+
+        bidirectional: {
+          type: Boolean,
+          value: false
+        },
+
+        sync: {
+          type: Object,
+          computed: '__computeSync(src, target, bidirectional)',
+          observer: '__syncChanged'
+        }
+      },
+
+      __computeSync: function(src, target, bidirectional) {
+        var options = {
+          live: true,
+          retry: true
+        }
+        return bidirectional ?
+          PouchDB.sync(src, target, options) :
+          PouchDB.replicate(src, target, options);
+      },
+
+      __syncChanged: function(sync, oldSync) {
+        if (oldSync) {
+          oldSync.removeAllListeners();
+          oldSync.cancel();
+        }
+
+        if (sync) {
+          sync.on('change', this.__onSyncChange.bind(this));
+          sync.on('error', this.__onSyncError.bind(this));
+        }
+      },
+
+      __onSyncChange: function(change) {
+        console.log(change);
+      },
+
+      __onSyncError: function(error) {
+        console.error(error);
+      }
+    });
+  })();
+</script>
