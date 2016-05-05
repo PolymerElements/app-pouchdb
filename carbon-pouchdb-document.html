@@ -78,6 +78,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this.data = this.zeroValue;
       },
 
+      destroy: function() {
+        this.set('data._deleted', true);
+        return this.transactionsComplete.then(function() {
+          return this.reset();
+        });
+      },
+
       getStoredValue: function(storagePath) {
         return this.db.get(this.docId).then(function(doc) {
           return this.get(storagePath, {
