@@ -11,43 +11,43 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>carbon-pouchdb-document tests</title>
+  <title>app-pouchdb-document tests</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
   <script src="../../web-component-tester/browser.js"></script>
 
-  <link rel="import" href="../../carbon-storage/test/carbon-storage-compatibility-suite.html">
+  <link rel="import" href="../../app-storage/test/app-storage-compatibility-suite.html">
   <link rel="import" href="../pouchdb.html">
-  <link rel="import" href="../carbon-pouchdb-document.html">
-  <link rel="import" href="../carbon-pouchdb-conflict-resolution.html">
+  <link rel="import" href="../app-pouchdb-document.html">
+  <link rel="import" href="../app-pouchdb-conflict-resolution.html">
 </head>
 <body>
 
   <test-fixture id="BasicStorage">
     <template>
-      <carbon-pouchdb-document
+      <app-pouchdb-document
           db-name="test-db"
           doc-id="test-doc" upsert>
-      </carbon-pouchdb-document>
+      </app-pouchdb-document>
     </template>
   </test-fixture>
 
   <test-fixture id="SyncingStorage">
     <template>
-      <carbon-pouchdb-document
+      <app-pouchdb-document
           id="DOC_A"
           db-name="test-db"
           doc-id="test-doc" upsert>
-      </carbon-pouchdb-document>
-      <carbon-pouchdb-document
+      </app-pouchdb-document>
+      <app-pouchdb-document
           id="DOC_B"
           db-name="test-db"
           doc-id="test-doc" upsert>
-      </carbon-pouchdb-document>
-      <carbon-pouchdb-conflict-resolution
+      </app-pouchdb-document>
+      <app-pouchdb-conflict-resolution
           strategy="firstWriteWins">
-      </carbon-pouchdb-conflict-resolution>
+      </app-pouchdb-conflict-resolution>
     </template>
   </test-fixture>
 
@@ -56,8 +56,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       return new PouchDB('test-db').destroy();
     });
 
-    testCarbonStorageDocumentCompatibility({
-      tagName: 'carbon-pouchdb-document',
+    testAppStorageDocumentCompatibility({
+      tagName: 'app-pouchdb-document',
       awaitUpdate: function(element) {
         return new Promise(function(resolve) {
           element.changes.on('change', function onChange() {

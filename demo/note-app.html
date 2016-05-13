@@ -14,11 +14,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../iron-icon/iron-icon.html">
 <link rel="import" href="../../font-roboto/roboto.html">
 <link rel="import" href="../../paper-fab/paper-fab.html">
-<link rel="import" href="../../carbon-storage/carbon-network-status-behavior.html">
+<link rel="import" href="../../app-storage/app-network-status-behavior.html">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700">
 
-<link rel="import" href="../carbon-pouchdb-query.html">
-<link rel="import" href="../carbon-pouchdb-index.html">
+<link rel="import" href="../app-pouchdb-query.html">
+<link rel="import" href="../app-pouchdb-index.html">
 <link rel="import" href="note-app/na-note.html">
 <link rel="import" href="note-app/na-editor.html">
 <dom-module id="note-app">
@@ -99,14 +99,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <iron-icon icon="cloud-off" hidden$="[[online]]"></iron-icon>
     </header>
 
-    <carbon-pouchdb-query
+    <app-pouchdb-query
         id="storage"
         db-name="notes"
         selector="_id $gt 0"
         fields='["_id", "title", "body"]'
         sort='["_id"]'
         data="{{data}}">
-    </carbon-pouchdb-query>
+    </app-pouchdb-query>
 
     <div class="notes">
       <template is="dom-repeat" items="[[data]]" as="note">
@@ -135,7 +135,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         is: 'note-app',
 
         behaviors: [
-          Polymer.CarbonNetworkStatusBehavior
+          Polymer.AppNetworkStatusBehavior
         ],
 
         edit(event) {

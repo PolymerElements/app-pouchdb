@@ -13,7 +13,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   (function() {
     'use strict';
 
-    Polymer.CarbonPouchDBDatabaseBehavior = {
+    Polymer.AppPouchDBDatabaseBehavior = {
       properties: {
         adapter: {
           type: String,
@@ -106,7 +106,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             this._log(this.id, 'Conflict for', method, doc._id, error._rev, error._conflicts);
             conflictResolver = this.resolveConflict;
 
-            this.fire('carbon-pouchdb-conflict', {
+            this.fire('app-pouchdb-conflict', {
               resolveConflict: function(_conflictResolver) {
                 if (_conflictResolver) {
                   conflictResolver = _conflictResolver;
