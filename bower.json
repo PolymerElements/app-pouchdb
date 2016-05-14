@@ -1,19 +1,19 @@
 {
-  "name": "carbon-pouchdb",
+  "name": "app-pouchdb",
   "version": "0.0.1",
   "authors": [
     "The Polymer Authors"
   ],
   "description": "Custom Elements for working with PouchDB.",
   "main": [
-    "carbon-pouchdb-document.html",
-    "carbon-pouchdb-query.html",
-    "carbon-pouchdb-index.html",
-    "carbon-pouchdb-conflict-resolution.html",
-    "carbon-pouchdb-database-behavior.html"
+    "app-pouchdb-document.html",
+    "app-pouchdb-query.html",
+    "app-pouchdb-index.html",
+    "app-pouchdb-conflict-resolution.html",
+    "app-pouchdb-database-behavior.html"
   ],
   "license": "http://polymer.github.io/LICENSE.txt",
-  "homepage": "https://github.com/PolymerElements/carbon-pouchdb",
+  "homepage": "https://github.com/PolymerElements/app-pouchdb",
   "private": true,
   "ignore": [],
   "dependencies": {
@@ -21,7 +21,7 @@
     "pouchdb": "^5.3.1",
     "pouchdb-find": "^0.9.0",
     "promise-polyfill": "polymerlabs/promise-polyfill#^1.0.0",
-    "carbon-storage": "git@github.com:polymerelements/carbon-storage.git"
+    "app-storage": "git@github.com:polymerelements/app-storage.git"
   },
   "devDependencies": {
     "web-component-tester": "^4.2.2",
