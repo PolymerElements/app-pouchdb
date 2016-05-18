@@ -9,18 +9,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="pouchdb.html">
-<!--
-`Polymer.AppPouchDBDatabaseBehavior` is an abstract implementation that is
-intended to be shared by any element that refers to and operates on a PouchDB
-database instance. It includes implementation for creating and configuring a
-PouchDB database instance, and some advanced macro operations that might be
-performed on the database, including "upsert" and conflict-aware "put" and
-"post" operations.
--->
 <script>
   (function() {
     'use strict';
 
+    /**
+     * `Polymer.AppPouchDBDatabaseBehavior` is an abstract implementation that
+     * is intended to be shared by any element that refers to and operates on a
+     * PouchDB database instance. It includes implementation for creating and
+     * configuring a PouchDB database instance, and some advanced macro
+     * operations that might be performed on the database, including "upsert"
+     * and conflict-aware "put" and "post" operations.
+     *
+     * @polymerBehavior
+     */
     Polymer.AppPouchDBDatabaseBehavior = {
       properties: {
         /**
