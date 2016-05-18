@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "web-component-tester": "^4.0.0",
+    "iron-component-page": "polymerelements/iron-component-page#^1.0.0",
     "paper-input": "polymerelements/paper-input#^1.0.0",
     "moment": "^2.12.0",
     "paper-styles": "polymerelements/paper-styles#^1.0.0",
