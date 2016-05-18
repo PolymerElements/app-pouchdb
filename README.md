@@ -2,7 +2,7 @@
 <!---
 
 This README is automatically generated from the comments in these files:
-app-pouchdb-conflict-resolution.html  app-pouchdb-document.html  app-pouchdb-query.html  app-pouchdb-sync.html
+app-pouchdb-conflict-resolution.html  app-pouchdb-document.html  app-pouchdb-index.html  app-pouchdb-query.html  app-pouchdb-sync.html
 
 Edit those files, and our readme bot will duplicate them over here!
 Edit this file, and the bot will squash your changes :)
@@ -79,6 +79,19 @@ PouchDB document:
     bind-value="{{cat.name}}">
 </input>
 ```
+
+
+
+##&lt;app-pouchdb-index&gt;
+
+`app-pouchdb-index` enables declarative, idempotent configuration of database
+indexes. The semantics map to those of the pouchdb-find plugin. For more
+information on creating PouchDB indexes with pouchdb-find, please refer to the
+documentation
+[here](https://github.com/nolanlawson/pouchdb-find#dbcreateindexindex--callback).
+
+Note: at least one index must be created in order for `app-pouchdb-query` to
+work.
 
 
 
