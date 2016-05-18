@@ -8,99 +8,26 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 <link rel="import" href="../../polymer/polymer.html">
-<link rel="import" href="../../paper-styles/color.html">
-<link rel="import" href="../../iron-flex-layout/iron-flex-layout.html">
-<link rel="import" href="../../iron-icons/iron-icons.html">
-<link rel="import" href="../../iron-icon/iron-icon.html">
-<link rel="import" href="../../font-roboto/roboto.html">
 <link rel="import" href="../../paper-fab/paper-fab.html">
-<link rel="import" href="../../app-storage/app-network-status-behavior.html">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700">
+<link rel="import" href="../../app-storage/app-indexeddb-mirror/app-indexeddb-mirror.html">
+<link rel="import" href="../../note-app-elements/na-elements.html">
 
 <link rel="import" href="../app-pouchdb-query.html">
-<link rel="import" href="../app-pouchdb-index.html">
-<link rel="import" href="note-app/na-note.html">
-<link rel="import" href="note-app/na-editor.html">
+<link rel="import" href="../app-pouchdb-document.html">
+<link rel="import" href="../app-pouchdb-conflict-resolution.html">
+
 <dom-module id="note-app">
   <template>
-    <style>
-      :host {
-        display: block;
-        background-color: #e8e8e8;
-        height: 100vh;
-        @apply(--paper-font-common-base);
+    <style include="note-app-shared-styles"></style>
 
-        --paper-fab-background: var(--paper-teal-500);
-      }
+    <na-toolbar></na-toolbar>
 
-      header {
-        @apply(--layout-horizontal);
-        @apply(--layout-center);
-        background-color: var(--paper-purple-500);
-        color: var(--paper-purple-50);
-        padding: 6px 8px;
-      }
-
-      h1 {
-        font-size: 14px;
-        flex-grow: 1;
-        margin: 9px 0;
-      }
-
-      iron-icon {
-        margin-right: 0.5em;
-      }
-
-      .notes {
-        position: relative;
-        box-sizing: border-box;
-        padding: 1em;
-        max-height: calc(100vh - 46px);
-        overflow: scroll;
-      }
-
-      na-note {
-        margin-bottom: 1em;
-      }
-
-      paper-fab {
-        position: absolute;
-        bottom: 1em;
-        right: 1em;
-      }
-
-      @media (min-width: 640px) {
-        na-note {
-          max-width: 320px;
-          margin: 0 0.5em 1em;
-        }
-
-        .notes {
-          @apply(--layout-horizontal);
-          @apply(--layout-wrap);
-          justify-content: center;
-          align-content: space-around;
-        }
-
-        iron-icon {
-          margin-right: 1.5em;
-        }
-
-        iron-icon:first-child {
-          margin-left: 1em;
-        }
-      }
-    </style>
-
-    <header>
-      <iron-icon icon="bookmark"></iron-icon>
-      <h1>Notes</h1>
-      <iron-icon icon="cloud" hidden$="[[!online]]"></iron-icon>
-      <iron-icon icon="cloud-off" hidden$="[[online]]"></iron-icon>
-    </header>
+    <app-pouchdb-confict-resolution
+        strategy="firstWriteWins">
+    </app-pouchdb-conflict-resolution>
 
     <app-pouchdb-query
-        id="storage"
+        id="query"
         db-name="notes"
         selector="_id $gt 0"
         fields='["_id", "title", "body"]'
@@ -119,11 +46,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </template>
     </div>
 
+    <app-pouchdb-document
+        id="document"
+        db-name="notes"
+        doc-id="[[editableNoteId]]"
+        data="{{editableNote}}">
+    </app-pouchdb-document>
+
     <paper-fab icon="add" on-tap="create"></paper-fab>
 
     <na-editor
         id="editor"
-        on-editor-close="__onEditorClose">
+        note="{{editableNote}}"
+        on-close="commitChange">
     </na-editor>
 
   </template>
@@ -135,21 +70,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         is: 'note-app',
 
         behaviors: [
-          Polymer.AppNetworkStatusBehavior
-        ],
-
-        edit(event) {
-          let noteElement = Polymer.dom(event).localTarget;
-          this.$.editor.edit(noteElement);
-        },
-
-        create() {
-          this.$.editor.create();
-        },
-
-        __onEditorClose() {
-          this.$.storage.refresh();
-        }
+          Polymer.NoteAppBehavior
+        ]
       });
     })();
   </script>
