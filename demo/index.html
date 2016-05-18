@@ -18,28 +18,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <title>Notes</title>
 
-  <!-- App Manifest -->
-  <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="../../note-app-elements/manifest.json">
 
-  <!-- Chrome Icons -->
+  <!-- Older Chrome and other browsers -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="Notes">
+  <meta name="theme-color" content="#9C27B0">
   <link rel="icon" sizes="192x192" href="images/icon-4x.png">
 
-  <!-- Mobile Safari Icons -->
+  <!-- Mobile Safari -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="#9C27B0">
   <meta name="apple-mobile-web-app-title" content="Notes">
-  <link rel="apple-touch-icon" href="images/icon-square-3x.png">
+  <link rel="apple-touch-icon" href="../../note-app-elements/images/icon-square-3x.png">
 
-  <!-- Windows Icons -->
+  <!-- Windows -->
   <meta name="msapplication-TileColor" content="#9C27B0">
-  <meta name="msapplication-TileImage" content="images/icon-inverted-3x.png">
+  <meta name="msapplication-TileImage" content="../../note-app-elements/images/icon-inverted-3x.png">
 
   <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../../web-animations-js/web-animations-next.min.js"></script>
   <link rel="import" href="../../platinum-sw/platinum-sw-elements.html">
-  <link rel="import" href="../app-pouchdb-sync.html">
+  <link rel="import" href="../pouchdb-sync.html">
   <link rel="import" href="note-app.html">
+
   <style>
     body {
       margin: 0;
@@ -63,7 +65,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- Synchronize remote and local DB: -->
   <!--
   <app-pouchdb-sync
-      src="http://127.0.0.1:5984/notes"
+      src="http://example.com:5984/notes"
       target="notes"
       bidirectional>
   </app-pouchdb-sync>
