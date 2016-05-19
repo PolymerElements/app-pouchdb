@@ -43,7 +43,7 @@ configured strategy.
 
 ##&lt;app-pouchdb-document&gt;
 
-`app-pouchdb-document` is an implementation of `Polymer.CarbonStorageBehavior`
+`app-pouchdb-document` is an implementation of `Polymer.AppStorageBehavior`
 for reading and writing to individual PouchDB documents.
 
 In order to refer to a PouchDB document, provide the name of the database
