@@ -53,12 +53,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         },
 
         /**
+         * Set to true if attachments should be returned in the document.
+         */
+        attachments: {
+          type: Boolean,
+          value: false
+        },
+
+        /**
+         * Set to true if attachments should be returned in binary form,
+         * which is represented as a Blob in the browser. Does nothing if
+         * attachments is set to false.
+         */
+        binary: {
+          type: Boolean,
+          value: false
+        },
+
+        /**
          * A reference to the PouchDB database instance that has been created.
          */
         db: {
           type: Object,
           computed: '__computeDb(dbName, adapter, revsLimit)',
-          notify: true,
+          notify: true
         },
 
         /**
@@ -84,6 +102,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           type: Function,
           value: null
         }
+      },
+
+      get _dbReadOptions() {
+        return {
+          attachments: this.attachments,
+          binary: this.binary
+        };
       },
 
       /**
@@ -133,7 +158,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
        */
       _upsert: function(path, value, doc) {
         var lookup = doc._id != null ?
-            this.db.get(doc._id) :
+            this.db.get(doc._id, this._dbReadOptions) :
             Promise.reject({ status: 404 });
 
         this._log('Upsert', path, value, doc);

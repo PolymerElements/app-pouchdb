@@ -143,7 +143,7 @@ PouchDB document:
 
       /** @override */
       getStoredValue: function(storagePath) {
-        return this.db.get(this.docId).then(function(doc) {
+        return this.db.get(this.docId, this._dbReadOptions).then(function(doc) {
           return this.get(storagePath, {
             data: doc
           });
@@ -171,7 +171,9 @@ PouchDB document:
         this._log('Doc / ID changed', doc, docId);
         if (db && doc != null && docId != null && doc._id != docId) {
           doc._id = docId;
-          this._initializeStoredValue();
+          this.async(function() {
+            this._initializeStoredValue();
+          }, 1);
         }
       },
 
@@ -188,12 +190,19 @@ PouchDB document:
           return null;
         }
 
-        return db.changes({
+        var changeOptions = {
           since: 'now',
           live: true,
           doc_ids: [docId],
-          include_docs: true,
-        }).on('change', function(change) {
+          include_docs: true
+        };
+        var readOptions = this._dbReadOptions;
+
+        for (var i in readOptions) {
+          changeOptions[i] = readOptions[i];
+        }
+
+        return db.changes(changeOptions).on('change', function(change) {
           var doc = change.doc;
           this.syncToMemory(function() {
             this.set('data', doc);
