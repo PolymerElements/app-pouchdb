@@ -17,24 +17,42 @@
   "private": true,
   "ignore": [],
   "dependencies": {
-    "polymer": "polymer/polymer#^v1.2.0",
     "pouchdb": "^6.1.1",
+    "polymer": "polymer/polymer#2.0-preview",
     "pouchdb-find": "^0.10.0",
-    "promise-polyfill": "polymerlabs/promise-polyfill#^1.0.0",
-    "app-storage": "polymerelements/app-storage#~0.9.0"
+    "app-storage": "polymerelements/app-storage#2.0-preview"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.0",
     "iron-component-page": "polymerelements/iron-component-page#^1.0.0",
     "paper-input": "polymerelements/paper-input#^1.0.0",
-    "paper-styles": "polymerelements/paper-styles#^1.0.0",
+    "paper-styles": "polymerelements/paper-styles#2.0-preview",
     "font-roboto": "polymerelements/font-roboto#^1.0.0",
-    "iron-flex-layout": "polymerelements/iron-flex-layout#^1.0.0",
-    "iron-icon": "polymerelements/iron-icon#^1.0.0",
-    "paper-fab": "polymerelements/paper-fab#^1.0.0",
-    "iron-icons": "polymerelements/iron-icons#^1.0.0",
-    "paper-button": "polymerelements/paper-button#^1.0.0",
+    "iron-flex-layout": "polymerelements/iron-flex-layout#2.0-preview",
+    "iron-icon": "polymerelements/iron-icon#2.0-preview",
+    "paper-fab": "polymerelements/paper-fab#2.0-preview",
+    "iron-icons": "polymerelements/iron-icons#2.0-preview",
+    "paper-button": "polymerelements/paper-button#2.0-preview",
     "platinum-sw": "polymerelements/platinum-sw#^1.3.0",
     "note-app-elements": "polymerlabs/note-app-elements"
+  },
+  "resolutions": {
+    "paper-styles": "2.0-preview",
+    "iron-flex-layout": "2.0-preview",
+    "iron-icon": "2.0-preview",
+    "paper-fab": "2.0-preview",
+    "iron-icons": "2.0-preview",
+    "polymer": "2.0-preview",
+    "paper-button": "2.0-preview",
+    "iron-behaviors": "2.0-preview",
+    "iron-a11y-keys-behavior": "2.0-preview",
+    "paper-material": "2.0-preview",
+    "paper-behaviors": "2.0-preview",
+    "iron-meta": "2.0-preview",
+    "iron-validatable-behavior": "2.0-preview",
+    "iron-iconset-svg": "2.0-preview",
+    "iron-checked-element-behavior": "2.0-preview",
+    "paper-ripple": "2.0-preview",
+    "webcomponentsjs": "v1"
   }
 }
