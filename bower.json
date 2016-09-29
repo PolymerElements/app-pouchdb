@@ -1,6 +1,6 @@
 {
   "name": "app-pouchdb",
-  "version": "0.9.5",
+  "version": "2.0.0",
   "authors": [
     "The Polymer Authors"
   ],
@@ -34,7 +34,7 @@
     "iron-icons": "polymerelements/iron-icons#2.0-preview",
     "paper-button": "polymerelements/paper-button#2.0-preview",
     "platinum-sw": "polymerelements/platinum-sw#2.0-preview",
-    "note-app-elements": "polymerlabs/note-app-elements"
+    "note-app-elements": "polymerlabs/note-app-elements#2.0-preview"
   },
   "resolutions": {
     "paper-styles": "2.0-preview",
