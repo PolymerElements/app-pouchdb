@@ -29,11 +29,12 @@
     "font-roboto": "polymerelements/font-roboto#^1.0.0",
     "iron-flex-layout": "polymerelements/iron-flex-layout#2.0-preview",
     "iron-icon": "polymerelements/iron-icon#2.0-preview",
+    "note-app-elements": "polymerlabs/note-app-elements#2.0-preview",
     "paper-fab": "polymerelements/paper-fab#2.0-preview",
     "iron-icons": "polymerelements/iron-icons#2.0-preview",
     "paper-button": "polymerelements/paper-button#2.0-preview",
     "platinum-sw": "polymerelements/platinum-sw#2.0-preview",
-    "note-app-elements": "polymerlabs/note-app-elements#2.0-preview",
+    "test-fixture": "PolymerElements/test-fixture#^3.0.0-rc.1",
     "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0-rc.1",
     "web-component-tester": "v6.0.0-prerelease.5"
   },
@@ -57,9 +58,14 @@
         "paper-button": "polymerelements/paper-button#^1.0.0",
         "platinum-sw": "polymerelements/platinum-sw#^1.0.0",
         "note-app-elements": "polymerlabs/note-app-elements",
+        "test-fixture": "polymerelements/test-fixture#^1.0.0",
         "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
         "web-component-tester": "^4.0.0"
       }
     }
+  },
+  "resolutions": {
+    "polymer": "^2.0.0-rc.1",
+    "test-fixture": "^3.0.0-rc.1"
   }
 }
