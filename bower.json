@@ -36,7 +36,7 @@
     "platinum-sw": "polymerelements/platinum-sw#2.0-preview",
     "test-fixture": "PolymerElements/test-fixture#^3.0.0-rc.1",
     "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0-rc.1",
-    "web-component-tester": "v6.0.0-prerelease.5"
+    "web-component-tester": "f27c6e0b11e476b48cdeb06e3d494ea0f132e503"
   },
   "variants": {
     "1.x": {
@@ -60,7 +60,7 @@
         "note-app-elements": "polymerlabs/note-app-elements",
         "test-fixture": "polymerelements/test-fixture#^1.0.0",
         "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
-        "web-component-tester": "^4.0.0"
+        "web-component-tester": "f27c6e0b11e476b48cdeb06e3d494ea0f132e503"
       }
     }
   },
