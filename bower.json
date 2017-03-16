@@ -34,6 +34,7 @@
     "iron-icons": "polymerelements/iron-icons#2.0-preview",
     "paper-button": "polymerelements/paper-button#2.0-preview",
     "platinum-sw": "polymerelements/platinum-sw#2.0-preview",
+    "promise-polyfill": "polymerlabs/promise-polyfill#2.0-preview",
     "test-fixture": "PolymerElements/test-fixture#^3.0.0-rc.1",
     "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0-rc.1",
     "web-component-tester": "f27c6e0b11e476b48cdeb06e3d494ea0f132e503"
@@ -57,6 +58,7 @@
         "iron-icons": "polymerelements/iron-icons#^1.0.0",
         "paper-button": "polymerelements/paper-button#^1.0.0",
         "platinum-sw": "polymerelements/platinum-sw#^1.0.0",
+        "promise-polyfill": "polymerlabs/promise-polyfill#^1.0.0",
         "note-app-elements": "polymerlabs/note-app-elements",
         "test-fixture": "polymerelements/test-fixture#^1.0.0",
         "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
