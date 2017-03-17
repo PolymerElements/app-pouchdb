@@ -67,7 +67,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             return new Promise(function(resolve) {
               element.changes.on('change', function onChange() {
                 element.changes.removeListener('change', onChange);
-                Polymer.Base.async(resolve, 1);
+                Polymer.Base.async(resolve, 50);
               });
             });
           },
