@@ -18,7 +18,7 @@
   "ignore": [],
   "dependencies": {
     "pouchdb": "^6.1.1",
-    "polymer": "polymer/polymer#2.0-preview",
+    "polymer": "polymer/polymer#2.0.0-rc.3",
     "pouchdb-find": "^0.10.0",
     "app-storage": "polymerelements/app-storage#2.0-preview"
   },
@@ -45,7 +45,7 @@
         "pouchdb": "^6.1.1",
         "polymer": "Polymer/polymer#^1.1.0",
         "pouchdb-find": "^0.10.0",
-        "app-storage": "polymerelements/app-storage#^0.9.8"
+        "app-storage": "polymerelements/app-storage#^0.10.0"
       },
       "devDependencies": {
         "iron-component-page": "polymerelements/iron-component-page#^1.0.0",
