@@ -59,31 +59,42 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         return new PouchDB('test-db').destroy();
       });
 
-      // pre 2.0 version of app-storage compat tests did not include polyfill IE
-      if (Object.assign) {
-        testAppStorageDocumentCompatibility({
-          tagName: 'app-pouchdb-document',
-          awaitUpdate: function(element) {
-            return new Promise(function(resolve) {
-              element.changes.on('change', function onChange() {
-                element.changes.removeListener('change', onChange);
-                Polymer.Base.async(resolve, 50);
+      var ua = navigator.userAgent;
+      var isSafari9 = ua.match(/.+Version\/9.+Safari\/((601)|(537))/g);
+
+      suite('app-pouchdb tests', function() {
+
+        // PouchDB fails in Safari 9 due to a buggy implementation of websql and
+        // loading in WCT. Cannot nicely feature detect for failure due to the
+        // asynchonous behavior of the error.
+        if (isSafari9) {
+          test('Tests Skipped');
+
+        } else {
+          testAppStorageDocumentCompatibility({
+            tagName: 'app-pouchdb-document',
+            awaitUpdate: function(element) {
+              return new Promise(function(resolve) {
+                element.changes.on('change', function onChange() {
+                  element.changes.removeListener('change', onChange);
+                  Polymer.Base.async(resolve, 50);
+                });
               });
-            });
-          },
-          fetchStoredValue: function(storagePath, element) {
-            return new PouchDB('test-db').get(element.docId).then(function(doc) {
-              return Polymer.Base.get(storagePath, {
-                data: doc
+            },
+            fetchStoredValue: function(storagePath, element) {
+              return new PouchDB('test-db').get(element.docId).then(function(doc) {
+                return Polymer.Base.get(storagePath, {
+                  data: doc
+                });
               });
-            });
-          },
-          unsetValue: function(storage) {
-            storage.set('data._deleted', true);
-            return storage.transactionsComplete;
-          }
-        });
-      }
+            },
+            unsetValue: function(storage) {
+              storage.set('data._deleted', true);
+              return storage.transactionsComplete;
+            }
+          });
+        }
+      });
     });
   </script>
 </body>
