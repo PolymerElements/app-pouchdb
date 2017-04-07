@@ -37,7 +37,7 @@
     "promise-polyfill": "polymerlabs/promise-polyfill#2.0-preview",
     "test-fixture": "PolymerElements/test-fixture#^3.0.0-rc.1",
     "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0-rc.1",
-    "web-component-tester": "f27c6e0b11e476b48cdeb06e3d494ea0f132e503"
+    "web-component-tester": "webcomponents/webcomponentsjs#^1.0.0-rc.1"
   },
   "variants": {
     "1.x": {
@@ -62,12 +62,8 @@
         "note-app-elements": "polymerlabs/note-app-elements",
         "test-fixture": "polymerelements/test-fixture#^1.0.0",
         "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
-        "web-component-tester": "f27c6e0b11e476b48cdeb06e3d494ea0f132e503"
+        "web-component-tester": "Polymer/web-component-tester#^4.0.0"
       }
     }
-  },
-  "resolutions": {
-    "polymer": "^2.0.0-rc.1",
-    "test-fixture": "^3.0.0-rc.1"
   }
 }
