@@ -48,19 +48,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       padding: 0;
     }
   </style>
+  <script>
+    // Configure service worker cahcing for html assets
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('../sw-import.js').then(function (registration) {
+          // Registration was successful
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }).catch(function (err) {
+          // registration failed :(
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
+  </script>
 </head>
 <body unresolved>
-  <!-- Configure Service Worker caching: -->
-  <platinum-sw-register
-      auto-register
-      skip-waiting
-      clients-claim
-      reload-on-install
-      href="../sw-import.js">
-    <platinum-sw-cache
-        default-cache-strategy="networkFirst">
-    </platinum-sw-cache>
-  </platinum-sw-register>
 
   <!-- Synchronize remote and local DB: -->
   <!--
