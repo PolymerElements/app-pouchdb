@@ -32,7 +32,6 @@
     "paper-fab": "polymerelements/paper-fab#1 - 2",
     "iron-icons": "polymerelements/iron-icons#1 - 2",
     "paper-button": "polymerelements/paper-button#1 - 2",
-    "platinum-sw": "polymerelements/platinum-sw#1 - 2",
     "promise-polyfill": "polymerlabs/promise-polyfill#1 - 2",
     "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0",
     "web-component-tester": "^6.0.0"
