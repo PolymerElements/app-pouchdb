@@ -41,8 +41,8 @@
       "dependencies": {
         "pouchdb": "^6.1.1",
         "polymer": "Polymer/polymer#^1.9",
-        "pouchdb-find": "^1.0.0",
-        "app-storage": "polymerelements/app-storage#^0.10.0"
+        "pouchdb-find": "^0.10.0",
+        "app-storage": "polymerelements/app-storage#^1.0.0"
       },
       "devDependencies": {
         "iron-component-page": "polymerelements/iron-component-page#^1.0.0",
