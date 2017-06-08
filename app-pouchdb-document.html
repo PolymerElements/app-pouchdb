@@ -108,7 +108,7 @@ PouchDB document:
       },
 
       /** @override */
-      save: function() {
+      saveValue: function() {
         if (!this.db) {
           return Promise.reject('No PouchDB instance available!');
         }
