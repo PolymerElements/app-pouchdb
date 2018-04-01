@@ -1,0 +1,6 @@
+{
+  "name": "@polymer/app-pouchdb",
+  "private": true,
+  "description": "Custom Elements for working with PouchDB.",
+  "license": "BSD-3-Clause"
+}
