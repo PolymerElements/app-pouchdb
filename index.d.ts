@@ -5,6 +5,9 @@
  *   https://github.com/Polymer/gen-typescript-declarations
  *
  * To modify these typings, edit the source file(s):
- *   sw-import.js
+ *   index.html
  */
+
+/// <reference path="../webcomponentsjs/webcomponents-lite.d.ts" />
+/// <reference path="../iron-component-page/iron-component-page.d.ts" />
 

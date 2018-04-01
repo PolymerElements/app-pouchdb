@@ -1,0 +1,19 @@
+{
+  "exclude": [
+    "sw-import.js",
+    "test/**",
+    "demo/**"
+  ],
+  "removeReferences": [
+    "../pouchdb/dist/pouchdb.d.ts",
+    "../pouchdb-find/dist/pouchdb.find.d.ts"
+  ],
+  "addReferences": {
+    "pouchdb.d.ts": [
+      "extra-types.d.ts"
+    ],
+    "pouchdb.find.d.ts": [
+      "extra-types.d.ts"
+    ]
+  }
+}

@@ -8,5 +8,5 @@
  *   pouchdb.html
  */
 
-/// <reference path="../pouchdb/dist/pouchdb.d.ts" />
+/// <reference path="extra-types.d.ts" />
 
