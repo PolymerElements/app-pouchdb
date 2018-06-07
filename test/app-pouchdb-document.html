@@ -24,7 +24,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       var isSafari9 = ua.match(/.+Version\/9.+Safari\/((601)|(537))/g);
 
       suite('app-pouchdb tests', function() {
-
         // PouchDB fails in Safari 9 due to a buggy implementation of websql and
         // loading in WCT. Cannot nicely feature detect for failure due to the
         // asynchonous behavior of the error.
@@ -44,9 +43,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             },
             fetchStoredValue: function(storagePath, element) {
               return new PouchDB('test-db').get(element.docId).then(function(doc) {
-                return Polymer.Base.get(storagePath, {
-                  data: doc
-                });
+                return Polymer.Base.get(storagePath, {data: doc});
               });
             },
             unsetValue: function(storage) {
